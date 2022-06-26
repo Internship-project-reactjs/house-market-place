@@ -5,6 +5,7 @@ import { doc, setDoc, getDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase.config";
 import { toast } from "react-toastify";
 import { FcGoogle } from "react-icons/fc";
+import GoogleButton from "react-google-button";
 
 const OAuth = () => {
   const navigate = useNavigate();
@@ -34,11 +35,12 @@ const OAuth = () => {
   return (
     <div>
       <h6 className="mt-2">
-        Sign {location.pathname === "/signup" ? "Up" : "in"} With &nbsp;
+        {/* Sign {location.pathname === "/signup" ? "Up" : "in"} With &nbsp;
         <button onClick={onGoolgleAuthHandler}>
           <FcGoogle />
-        </button>
+        </button> */}
       </h6>
+      <GoogleButton style={{width:"100%"}} onClick={onGoolgleAuthHandler} />
     </div>
   );
 };

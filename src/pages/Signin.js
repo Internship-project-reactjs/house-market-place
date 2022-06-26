@@ -83,7 +83,7 @@ const Signin = () => {
             </span>{" "}
             <Link to="/forgot-password">forgot Password</Link>
           </div>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary w-100">
             Sign in
           </button>
           <OAuth />
