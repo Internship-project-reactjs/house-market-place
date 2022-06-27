@@ -54,41 +54,134 @@ const Slider = () => {
         {listings === null ? (
           <Spinner />
         ) : (
-          <Swiper
-            effect={"coverflow"}
-            grabCursor={true}
-            centeredSlides={true}
-            slidesPerView={1}
-            coverflowEffect={{
-              rotate: 50,
-              stretch: 0,
-              depth: 100,
-              modifier: 1,
-              slideShadows: true,
-            }}
-            pagination={true}
-            className="mySwipe"
+          <div
+            id="carouselExampleDark"
+            className="carousel carousel-light slide"
+            data-bs-ride="carousel"
           >
-            {listings.map(({ data, id }) => (
-              <SwiperSlide
-                key={id}
-                onClick={() => {
-                  navigat(`/category/${data.type}/${id}`);
-                }}
+            <div className="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleDark"
+                data-bs-slide-to={0}
+                className="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              />
+              <button
+                type="button"
+                data-bs-target="#carouselExampleDark"
+                data-bs-slide-to={1}
+                aria-label="Slide 2"
+              />
+              <button
+                type="button"
+                data-bs-target="#carouselExampleDark"
+                data-bs-slide-to={2}
+                aria-label="Slide 3"
+              />
+              <button
+                type="button"
+                data-bs-target="#carouselExampleDark"
+                data-bs-slide-to={3}
+                aria-label="Slide 4"
+              />
+              <button
+                type="button"
+                data-bs-target="#carouselExampleDark"
+                data-bs-slide-to={4}
+                aria-label="Slide 5"
+              />
+            </div>
+            <div className="carousel-inner">
+                <div className="carousel-item active" data-bs-interval={100}>
+                  <img
+                    src={listings[0].data.imgUrls[0]}
+                    className="d-block w-100"
+                    height={400}
+                    width={1100}
+                    alt={listings[0].data.name}
+                  />
+                </div>
+              {listings.map(({data, id }) => (
+                <div
+                  className="carousel-item"
+                  data-bs-interval={3000}
+                  key={id}
+                  onClick={() => {
+                    navigat(`/category/${data.type}/${id}`);
+                  }}
+                >
+                  <h6 className="carousel-caption d-none d-md-block">
+                    {/* <img alt="user pic" src={userPic} height={35} width={35} /> */}
+                    <span className="ms-2"> {data.name}</span>
+                  </h6>
+                  <img
+                    className="d-block w-100"
+                    src={data.imgUrls[0]}
+                    height={400}
+                    width={1100}
+                    alt={data.name}
+                  />
+                </div>
+              ))}
+              {/* <div className="carousel-item active" data-bs-interval={10000}>
+                  <img src="..." className="d-block w-100" alt="..." />
+                  <div className="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>
+                      Some representative placeholder content for the first
+                      slide.
+                    </p>
+                  </div>
+                </div>
+                <div className="carousel-item" data-bs-interval={2000}>
+                  <img src="..." className="d-block w-100" alt="..." />
+                  <div className="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>
+                      Some representative placeholder content for the second
+                      slide.
+                    </p>
+                  </div>
+                </div>
+                <div className="carousel-item">
+                  <img src="..." className="d-block w-100" alt="..." />
+                  <div className="carousel-caption d-none d-md-block">
+                    <h5>Third slide label</h5>
+                    <p>
+                      Some representative placeholder content for the third
+                      slide.
+                    </p>
+                  </div>
+                </div>
+              </div> */}
+              <button
+                className="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleDark"
+                data-bs-slide="prev"
               >
-                <h6 className="bg-info text-light p-2 m-0 ">
-                  <img alt="user pic" src={userPic} height={35} width={35} />
-                  <span className="ms-2"> {data.name}</span>
-                </h6>
-                <img
-                  src={data.imgUrls[0]}
-                  height={400}
-                  width={1100}
-                  alt={data.name}
+                <span
+                  className="carousel-control-prev-icon"
+                  aria-hidden="true"
                 />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                <span className="visually-hidden">Previous</span>
+              </button>
+              <button
+                className="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleDark"
+                data-bs-slide="next"
+              >
+                <span
+                  className="carousel-control-next-icon"
+                  aria-hidden="true"
+                />
+                <span className="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
         )}
       </div>
     </>
@@ -96,3 +189,39 @@ const Slider = () => {
 };
 
 export default Slider;
+
+// <Swiper
+// effect={"coverflow"}
+// grabCursor={true}
+// centeredSlides={true}
+// slidesPerView={1}
+// coverflowEffect={{
+//   rotate: 50,
+//   stretch: 0,
+//   depth: 100,
+//   modifier: 1,
+//   slideShadows: true,
+// }}
+// pagination={true}
+// className="mySwipe"
+// >
+// {listings.map(({ data, id }) => (
+//   <SwiperSlide
+//     key={id}
+//     onClick={() => {
+//       navigat(`/category/${data.type}/${id}`);
+//     }}
+//   >
+//     <h6 className="bg-info text-light p-2 m-0 ">
+//       <img alt="user pic" src={userPic} height={35} width={35} />
+//       <span className="ms-2"> {data.name}</span>
+//     </h6>
+//     <img
+//       src={data.imgUrls[0]}
+//       height={400}
+//       width={1100}
+//       alt={data.name}
+//     />
+//   </SwiperSlide>
+// ))}
+// </Swiper>
