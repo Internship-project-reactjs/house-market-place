@@ -25,7 +25,7 @@ const Contact = () => {
   }, [params.landlordId]);
   return (
     <Layout>
-      <div className=" container  mt-4">
+      <div className=" container mt-4">
         <h3>Contact Details</h3>
         <div>
           {landlord !== "" && (
@@ -34,7 +34,7 @@ const Contact = () => {
 
               <div className="form-floating">
                 <textarea
-                  className="form-control"
+                  className="form-control w-50"
                   placeholder="Leave a comment here"
                   value={message}
                   id="message"
@@ -53,6 +53,8 @@ const Contact = () => {
               </a>
             </main>
           )}
+        </div>
+        <div>
         </div>
       </div>
     </Layout>
