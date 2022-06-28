@@ -4,7 +4,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase.config";
 import { useParams, useSearchParams } from "react-router-dom";
 import { toast } from "react-toastify";
-
+import MsgPic from "./MsgPic";
 const Contact = () => {
   const [message, setMessage] = useState("");
   const [landlord, setLandlord] = useState("");
@@ -25,16 +25,17 @@ const Contact = () => {
   }, [params.landlordId]);
   return (
     <Layout>
-      <div className=" container mt-4">
-        <h3>Contact Details</h3>
-        <div>
+      <h3>Contact Details</h3>
+      <div className="container mt-4 d-flex">
+        <div className="w-50">
           {landlord !== "" && (
             <main>
               <h3>Name : {landlord?.name}</h3>
 
               <div className="form-floating">
                 <textarea
-                  className="form-control w-50"
+                  style={{height:"100px",width:"550px"}}
+                  className="form-control mt-3"
                   placeholder="Leave a comment here"
                   value={message}
                   id="message"
@@ -42,20 +43,19 @@ const Contact = () => {
                     setMessage(e.target.value);
                   }}
                 />
-                <label htmlFor="floatingTextarea"> your message</label>
+                <label htmlFor="floatingTextarea"> Your message</label>
               </div>
               <a
                 href={`mailto:${landlord.email}?Subject=${searchParams.get(
                   "listingName"
                 )}&body=${message}`}
               >
-                <button className="btn btn-primary mt-2">Send Message</button>
+                <button className="btn btn-primary mt-3">Send Message</button>
               </a>
             </main>
           )}
         </div>
-        <div>
-        </div>
+        <MsgPic />
       </div>
     </Layout>
   );
