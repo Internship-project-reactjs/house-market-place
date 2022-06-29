@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Slider from "../components/Slider";
 import Layout from "./../components/Layout/Layout";
+import { motion } from "framer-motion";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -15,20 +16,34 @@ const HomePage = () => {
       <div className="container mt-3">
         <Slider />
         <div className="row">
-          <h1
+          <motion.h1
             style={{
               marginTop: "30px",
               marginBottom: "30px",
               fontFamily: "Lobster",
             }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 1.5 }}
           >
             <b>
-              <i style={{marginLeft:"30px"}}>Category</i>
+              <i style={{ marginLeft: "30px" }}>Category</i>
             </b>
-          </h1>
+          </motion.h1>
 
-          <div className="col-md-5">
-            <div className="Imagecontainer" style={{marginLeft:"30px"}}>
+          <motion.div
+            className="col-md-5"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 1.5 }}
+          >
+            <motion.div
+              className="Imagecontainer"
+              style={{ marginLeft: "30px", width: "400px" }}
+              whileHover={{
+                scale: 1.1,
+              }}
+            >
               <img
                 src={img1}
                 alt="Rent"
@@ -36,20 +51,29 @@ const HomePage = () => {
                   width: "85%",
                   borderRadius: "20px",
                   border: "4px solid #98AFC7",
-                  
                 }}
               />
-              <button
+              <motion.button
                 className="btn"
                 onClick={() => navigate("/category/rent")}
-                
               >
                 TO RENT
-              </button>
-            </div>
-          </div>
-          <div className="col-md-5">
-            <div className="Imagecontainer" style={{marginLeft:"30px"}}>
+              </motion.button>
+            </motion.div>
+          </motion.div>
+          <motion.div
+            className="col-md-5"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 1.5 }}
+          >
+            <motion.div
+              className="Imagecontainer"
+              style={{ marginLeft: "30px" }}
+              whileHover={{
+                scale: 1.1,
+              }}
+            >
               <img
                 src={img2}
                 alt="Rent"
@@ -57,18 +81,16 @@ const HomePage = () => {
                   width: "85%",
                   borderRadius: "20px",
                   border: "4px solid #98AFC7",
-                  
                 }}
               />
               <button
                 className="btn"
                 onClick={() => navigate("/category/sale")}
-                
               >
                 TO SALE
               </button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </Layout>
