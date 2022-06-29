@@ -13,11 +13,12 @@ const HomePage = () => {
   const navigat = useNavigate();
   return (
     <Layout>
-      <div className="container mt-3">
+      <div className="m-0 w-100">
         <Slider />
         <div className="row">
           <motion.h1
             style={{
+              textAlign: "center",
               marginTop: "30px",
               marginBottom: "30px",
               fontFamily: "Lobster",
@@ -26,71 +27,75 @@ const HomePage = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 1.5 }}
           >
-            <b>
-              <i style={{ marginLeft: "30px" }}>Category</i>
-            </b>
+            <b>Category</b>
           </motion.h1>
-
-          <motion.div
-            className="col-md-5"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5, duration: 1.5 }}
+          <div
+            className="d-flex align-items-center justify-content-center"
+            style={{ width: "100vw" }}
           >
             <motion.div
-              className="Imagecontainer"
-              style={{ marginLeft: "30px", width: "400px" }}
-              whileHover={{
-                scale: 1.1,
-              }}
+              className="d-flex align-items-center justify-content-center"
+              style={{ width: "50vw" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.5, duration: 1.5 }}
             >
-              <img
-                src={img1}
-                alt="Rent"
-                style={{
-                  width: "85%",
-                  borderRadius: "20px",
-                  border: "4px solid #98AFC7",
+              <motion.div
+                className="Imagecontainer"
+                style={{ width: "500px" }}
+                whileHover={{
+                  scale: 1.1,
                 }}
-              />
-              <motion.button
-                className="btn"
-                onClick={() => navigate("/category/rent")}
               >
-                TO RENT
-              </motion.button>
+                <img
+                  src={img1}
+                  alt="Rent"
+                  style={{
+                    width: "100%",
+                    borderRadius: "20px",
+                    border: "4px solid #98AFC7",
+                  }}
+                />
+                <motion.button
+                  className="btn"
+                  onClick={() => navigate("/category/rent")}
+                >
+                  TO RENT
+                </motion.button>
+              </motion.div>
             </motion.div>
-          </motion.div>
-          <motion.div
-            className="col-md-5"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5, duration: 1.5 }}
-          >
             <motion.div
-              className="Imagecontainer"
-              style={{ marginLeft: "30px" }}
-              whileHover={{
-                scale: 1.1,
-              }}
+              className="d-flex align-items-center justify-content-center"
+              style={{ width: "50vw" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.5, duration: 1.5 }}
             >
-              <img
-                src={img2}
-                alt="Rent"
-                style={{
-                  width: "85%",
-                  borderRadius: "20px",
-                  border: "4px solid #98AFC7",
+              <motion.div
+                className="Imagecontainer"
+                style={{ marginLeft: "30px", width: "500px" }}
+                whileHover={{
+                  scale: 1.1,
                 }}
-              />
-              <button
-                className="btn"
-                onClick={() => navigate("/category/sale")}
               >
-                TO SALE
-              </button>
+                <img
+                  src={img2}
+                  alt="Rent"
+                  style={{
+                    width: "100%",
+                    borderRadius: "20px",
+                    border: "4px solid #98AFC7",
+                  }}
+                />
+                <button
+                  className="btn"
+                  onClick={() => navigate("/category/sale")}
+                >
+                  TO SALE
+                </button>
+              </motion.div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </Layout>

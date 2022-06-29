@@ -14,7 +14,7 @@ import CreateListing from "./pages/CreateListing";
 import Listing from "./pages/Listing";
 import Contact from "./pages/Contact";
 import EditListing from "./pages/EditListing";
-
+import "./App.css"
 function App() {
   return (
     <BrowserRouter>

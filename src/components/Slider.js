@@ -50,7 +50,7 @@ const Slider = () => {
   }
   return (
     <>
-      <div className="container-fluid">
+      <div >
         {listings === null ? (
           <Spinner />
         ) : (
@@ -98,8 +98,8 @@ const Slider = () => {
                   <img
                     src={listings[0].data.imgUrls[0]}
                     className="d-block w-100"
-                    height={400}
-                    width={1100}
+                    height={450}
+                    width='100vw'
                     alt={listings[0].data.name}
                   />
                 </div>
@@ -119,8 +119,8 @@ const Slider = () => {
                   <img
                     className="d-block w-100"
                     src={data.imgUrls[0]}
-                    height={400}
-                    width={1100}
+                    height={450}
+                    width="100vw"
                     alt={data.name}
                   />
                 </div>
