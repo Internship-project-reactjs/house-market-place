@@ -58,7 +58,7 @@ const Profile = () => {
   const logoutHandler = () => {
     auth.signOut();
     toast.success("Successfully Logout");
-    navigate("/singin");
+    navigate('/signin');
   };
 
   //onChange
