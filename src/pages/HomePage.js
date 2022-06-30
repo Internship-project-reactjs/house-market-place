@@ -102,9 +102,11 @@ const HomePage = () => {
                 >
                   TO SALE
                 </button> */}
-                <h1 style={{ fontFamily: "Yantramanav, sans-serif" }}>
+                <motion.h1 whileHover={{
+                  scale: 1.1,
+                }} style={{ fontFamily: "Yantramanav, sans-serif" }}>
                   For Rent{" "}
-                </h1>
+                </motion.h1>
                 <h2 style={{ fontFamily: "M PLUS 1p', sans-serif" }}>
                   Rent Your Dream House Here{" "}
                 </h2>
@@ -145,10 +147,12 @@ const HomePage = () => {
                 >
                   TO RENT
                 </motion.button> */}
-                <h1 style={{ fontFamily: "Yantramanav, sans-serif" }}>
+                <motion.h1 whileHover={{
+                  scale: 1.1,
+                }} style={{ fontFamily: "Yantramanav, sans-serif" }}>
                   {" "}
                   For Sale{" "}
-                </h1>
+                </motion.h1>
                 <h2 style={{ fontFamily: "M PLUS 1p', sans-serif" }}>
                   Sale Your Dream House Here{" "}
                 </h2>
