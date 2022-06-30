@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import Slider from "../components/Slider";
 import Layout from "./../components/Layout/Layout";
 import { motion } from "framer-motion";
+import RentPic from "../Pics/RentPic";
+import SellPic from "../Pics/SellPic";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -27,7 +29,7 @@ const HomePage = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 1.5 }}
           >
-            <b>Category</b>
+            <h1 style={{fontFamily:"'Francois One', sans-serif"}}>Category</h1>
           </motion.h1>
           <div
             className="d-flex align-items-center justify-content-center"
@@ -42,12 +44,13 @@ const HomePage = () => {
             >
               <motion.div
                 className="Imagecontainer"
-                style={{ width: "500px" }}
+                onClick={() => navigate("/category/rent")}
+                style={{ width: "500px", cursor: "pointer" }}
                 whileHover={{
                   scale: 1.1,
                 }}
               >
-                <img
+                {/* <img
                   src={img1}
                   alt="Rent"
                   style={{
@@ -61,24 +64,30 @@ const HomePage = () => {
                   onClick={() => navigate("/category/rent")}
                 >
                   TO RENT
-                </motion.button>
+                </motion.button> */}
+                <RentPic />
+                <h5 style={{ fontFamily: "M PLUS 1p', sans-serif", textAlign:"center",marginTop:"10px",marginLeft:"20px" }}>
+                  Click Here For Rent
+                </h5>
               </motion.div>
             </motion.div>
-            <motion.div
+
+            <div
               className="d-flex align-items-center justify-content-center"
               style={{ width: "50vw" }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.5, duration: 1.5 }}
             >
-              <motion.div
+              <div
                 className="Imagecontainer"
-                style={{ marginLeft: "30px", width: "500px" }}
+                onClick={() => navigate("/category/rent")}
+                style={{ width: "50vw", cursor: "pointer" }}
                 whileHover={{
                   scale: 1.1,
                 }}
               >
-                <img
+                {/* <img
                   src={img2}
                   alt="Rent"
                   style={{
@@ -92,7 +101,95 @@ const HomePage = () => {
                   onClick={() => navigate("/category/sale")}
                 >
                   TO SALE
-                </button>
+                </button> */}
+                <h1 style={{ fontFamily: "Yantramanav, sans-serif" }}>
+                  For Rent{" "}
+                </h1>
+                <h2 style={{ fontFamily: "M PLUS 1p', sans-serif" }}>
+                  Rent Your Dream House Here{" "}
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div
+            className="d-flex align-items-center justify-content-center"
+            style={{ width: "100vw" }}
+          >
+            <div
+              className="d-flex align-items-center justify-content-center"
+              style={{ width: "50vw" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.5, duration: 1.5 }}
+            >
+              <div
+                className="Imagecontainer"
+                onClick={() => navigate("/category/sale")}
+                style={{ width: "500px", cursor: "pointer" }}
+                whileHover={{
+                  scale: 1.1,
+                }}
+              >
+                {/* <img
+                  src={img1}
+                  alt="Rent"
+                  style={{
+                    width: "100%",
+                    borderRadius: "20px",
+                    border: "4px solid #98AFC7",
+                  }}
+                />
+                <motion.button
+                  className="btn"
+                  onClick={() => navigate("/category/rent")}
+                >
+                  TO RENT
+                </motion.button> */}
+                <h1 style={{ fontFamily: "Yantramanav, sans-serif" }}>
+                  {" "}
+                  For Sale{" "}
+                </h1>
+                <h2 style={{ fontFamily: "M PLUS 1p', sans-serif" }}>
+                  Sale Your Dream House Here{" "}
+                </h2>
+              </div>
+            </div>
+
+            <motion.div
+              className="d-flex align-items-center justify-content-center"
+              style={{ width: "50vw" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.5, duration: 1.5 }}
+            >
+              <motion.div
+                className="Imagecontainer"
+                onClick={() => navigate("/category/sale")}
+                style={{ width: "50vw", cursor: "pointer" }}
+                whileHover={{
+                  scale: 1.1,
+                }}
+              >
+                {/* <img
+                  src={img2}
+                  alt="Rent"
+                  style={{
+                    width: "100%",
+                    borderRadius: "20px",
+                    border: "4px solid #98AFC7",
+                  }}
+                />
+                <button
+                  className="btn"
+                  onClick={() => navigate("/category/sale")}
+                >
+                  TO SALE
+                </button> */}
+
+                <SellPic/>
+                <h5 style={{ fontFamily: "M PLUS 1p', sans-serif", textAlign:"center",marginTop:"10px", marginLeft:"20px" }}>
+                  Click Here For Sale
+                </h5>
               </motion.div>
             </motion.div>
           </div>

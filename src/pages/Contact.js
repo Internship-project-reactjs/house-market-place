@@ -4,7 +4,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase.config";
 import { useParams, useSearchParams } from "react-router-dom";
 import { toast } from "react-toastify";
-import MsgPic from "./MsgPic";
+import MsgPic from "../Pics/MsgPic";
 const Contact = () => {
   const [message, setMessage] = useState("");
   const [landlord, setLandlord] = useState("");
@@ -55,7 +55,7 @@ const Contact = () => {
             </main>
           )}
         </div>
-        <MsgPic />
+        <MsgPic/>
       </div>
     </Layout>
   );
