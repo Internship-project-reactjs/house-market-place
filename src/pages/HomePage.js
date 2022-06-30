@@ -72,7 +72,7 @@ const HomePage = () => {
               </motion.div>
             </motion.div>
 
-            <div
+            <motion.div
               className="d-flex align-items-center justify-content-center"
               style={{ width: "50vw" }}
               initial={{ opacity: 0 }}
@@ -102,22 +102,30 @@ const HomePage = () => {
                 >
                   TO SALE
                 </button> */}
+                <motion.div className="text1" style={{backgroundColor:"#2C3539	" ,width:"400px",padding:"30px", borderRadius:"15px",marginLeft:"50px"}}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 , x:-50}}
+                transition={{ delay: 1.5, duration: 1.5 }}
+                whileHover={{
+                  boxShadow: "0px 0px 8px #565051",
+                }}>
                 <motion.h1 whileHover={{
                   scale: 1.1,
-                }} style={{ fontFamily: "Yantramanav, sans-serif" }}>
+                }} style={{ fontFamily: "Yantramanav, sans-serif" ,color:"#659EC7	"}}><b>
                   For Rent{" "}
-                </motion.h1>
-                <h2 style={{ fontFamily: "M PLUS 1p', sans-serif" }}>
+                  </b></motion.h1>
+                <h2 style={{ fontFamily: "M PLUS 1p', sans-serif",color:"white" }}>
                   Rent Your Dream House Here{" "}
                 </h2>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
           </div>
           <div
             className="d-flex align-items-center justify-content-center"
             style={{ width: "100vw" }}
           >
-            <div
+            <motion.div
               className="d-flex align-items-center justify-content-center"
               style={{ width: "50vw" }}
               initial={{ opacity: 0 }}
@@ -147,17 +155,25 @@ const HomePage = () => {
                 >
                   TO RENT
                 </motion.button> */}
+                <motion.div className="text2" style={{backgroundColor:"#2C3539	" ,width:"400px",padding:"30px", borderRadius:"15px",marginRight:"50px"}}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 , x:50}}
+                transition={{ delay: 1.5, duration: 1.5 }}
+                whileHover={{
+                  boxShadow: "0px 0px 8px #565051",
+                }}>
                 <motion.h1 whileHover={{
                   scale: 1.1,
-                }} style={{ fontFamily: "Yantramanav, sans-serif" }}>
+                }} style={{ fontFamily: "Yantramanav, sans-serif",color:"#659EC7	" }}><b>
                   {" "}
                   For Sale{" "}
-                </motion.h1>
-                <h2 style={{ fontFamily: "M PLUS 1p', sans-serif" }}>
+                  </b></motion.h1>
+                <h2 style={{ fontFamily: "M PLUS 1p', sans-serif",color:"white" }}>
                   Sale Your Dream House Here{" "}
                 </h2>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
 
             <motion.div
               className="d-flex align-items-center justify-content-center"
