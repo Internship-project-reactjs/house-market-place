@@ -46,7 +46,7 @@ const ListingItem = ({ listing, id, onDelete, onEdit }) => {
             {onDelete && (
               <button
                 className="btn btn-danger mx-2"
-                onClick={() => onDelete(listing.id)}
+                onClick={() => onDelete(listing.id,listing.name)}
               >
                 Delete Listing
               </button>

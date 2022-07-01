@@ -87,7 +87,7 @@ const Profile = () => {
 
   //delete handler
   const onDelete = async (listingId) => {
-    if (window.confirm("Are You Sure  want to delete ?")) {
+    if (window.confirm('Are You Sure  want to delete ?')) {
       // await deleteDoc(doc, (db, "listings", listingId));
       await deleteDoc(doc(db, "listings", listingId));
       const updatedListings = listings.filter(
@@ -169,7 +169,7 @@ const Profile = () => {
       <div className="container">
         {listings && listings?.length > 0 && (
           <>
-            <h6>Your Listings</h6>
+            <h5>Your Listings</h5>
             <div>
               {listings.map((listing) => (
                 <ListingItem

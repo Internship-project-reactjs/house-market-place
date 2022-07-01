@@ -81,8 +81,11 @@ const Signin = () => {
           <button type="submit" className="btn btn-primary w-100" style={{marginTop:"20px",marginBottom:'1rem'}}>
             Sign in
           </button>
-          <hr/>
-          <p className="or">OR</p>
+          <div className="d-flex">
+          <hr style={{width:"40%",marginLeft:"10px"}}/>
+          <p className="pt-2 mx-2" style={{backgroundColor:"#E8E6FD"}}>OR</p>
+          <hr style={{width:"40%",marginLeft:"0px"}}/>
+          </div>
           <OAuth />
           
             <span className="new1">New User</span> <Link to="/signup" className="sup new">Sign up</Link>
