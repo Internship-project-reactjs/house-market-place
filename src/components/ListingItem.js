@@ -4,8 +4,8 @@ import { FaBed, FaBath } from "react-icons/fa";
 const ListingItem = ({ listing, id, onDelete, onEdit }) => {
   return (
     <>
-      <div className="d-flex align-items-center justify-content-center">
-        <div className="card category-link mb-2" style={{ width: "800px" }}>
+      <div className="d-flex align-items-center justify-content-center p-2">
+        <div className="card category-link mb-2 p-3" style={{ width: "800px" }}>
           <Link to={`/category/${listing.type}/${id}`}>
             <div className="row container p-2">
               <div className="col-md-5">
@@ -45,7 +45,7 @@ const ListingItem = ({ listing, id, onDelete, onEdit }) => {
           <div>
             {onDelete && (
               <button
-                className="btn btn-danger"
+                className="btn btn-danger mx-2"
                 onClick={() => onDelete(listing.id)}
               >
                 Delete Listing
