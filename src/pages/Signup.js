@@ -11,6 +11,7 @@ import {
 import { db } from "../firebase.config";
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 import OAuth from "../components/OAuth";
+import userIcon from '../assets/png/pngfind.com-privacy-icon-png-4703547.png'
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -54,62 +55,55 @@ const Signup = () => {
   return (
     <Layout>
       <div className="d-flex  align-items-center justify-content-center w-100 mt-4">
-        <form className="bg-light p-4" onSubmit={onSubmitHndler}>
-          <h4 className="bg-dark p-2 mt-2 text-light text-center">Sign Up </h4>
+        <form className="bg p-4" onSubmit={onSubmitHndler}>
+        <img className="uIcon" src={userIcon} alt="user" />
+          <h4 className="sin" style={{marginBottom:"20px",borderRadius:"8px"}}>Sign Up </h4>
           <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">
-              Enter Name
-            </label>
-            <input
-              type="text"
-              value={name}
-              className="form-control"
-              id="name"
-              onChange={onChange}
-              aria-describedby="nameHelp"
-            />
+          <input
+            type='text'
+            className='nameInput'
+            placeholder='Name'
+            id='name'
+            value={name}
+            onChange={onChange}
+          />
           </div>
-          <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">
-              Email address
-            </label>
-            <input
-              type="email"
-              value={email}
-              onChange={onChange}
-              className="form-control"
-              id="email"
-              aria-describedby="emailHelp"
-            />
+          <div className="emailInputDiv">
+          <input
+            type='email'
+            className='emailInput'
+            placeholder='Email'
+            id='email'
+            value={email}
+            onChange={onChange}
+          />
           </div>
-          <div className="mb-3">
-            <label htmlFor="exampleInputPassword1" className="form-label">
-              Password
-            </label>
+          <div className='passwordInputDiv'>
             <input
-              type={showPassword ? "text" : "password"}
+              type={showPassword ? 'text' : 'password'}
+              className='passwordInput'
+              placeholder='Password'
+              id='password'
               value={password}
               onChange={onChange}
-              className="form-control"
-              id="password"
             />
-            <span>
-              show password
-              <BsFillEyeFill
-                className="text-danger ms-2"
-                style={{ cursor: "pointer" }}
-                onClick={() => {
-                  setShowPassword((prevState) => !prevState);
-                }}
-              />
-            </span>
+
+            <img
+              src={"https://house-marketplace-ecru.vercel.app/static/media/visibilityIcon.d42e2dff8b09be94d6d209f0e86cf2d3.svg"}
+              alt='show password'
+              className='showPassword'
+              onClick={() => setShowPassword((prevState) => !prevState)}
+            />
           </div>
-          <button type="submit" className="btn btn-primary w-100">
+          
+          <button type="submit" className="btn btn-primary w-100" style={{marginTop:"20px",marginBottom:'1rem'}}>
             Sign up
           </button>
+          <hr/>
+          <p className="or">OR</p>
           <div>
             <OAuth />
-            <span>Already User</span> <Link to="/signin">Login</Link>
+            <span className="new1">Already User</span> <Link to="/signin" className="sup new">Login</Link>
           </div>
         </form>
       </div>

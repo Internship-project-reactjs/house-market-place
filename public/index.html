@@ -24,12 +24,15 @@
     />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-/>
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
 
-    <script src="https://kit.fontawesome.com/65d8897544.js" crossorigin="anonymous"></script>
-  
+    <script
+      src="https://kit.fontawesome.com/65d8897544.js"
+      crossorigin="anonymous"
+    ></script>
+
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -42,17 +45,180 @@
     <title>House Market Place</title>
   </head>
   <style>
-    .navbar{
+    .navbar {
       background-color: rgb(89, 32, 244);
-      
     }
-    #cright{
+    #cright {
       background-color: rgb(89, 32, 244);
       height: 40px;
       margin-top: 20px;
-      
     }
-    
+    /*.form-control2{
+      background: url(https://house-marketplace-ecru.vercel.app/static/media/lockIcon.a38a1b56168bd1199de4.svg) #fff 2.5% no-repeat;
+    margin-bottom: 2rem;
+    }*/
+    .input,
+    .passwordInput,
+    .emailInput,
+    .nameInput,
+    .textarea {
+      box-shadow: rgba(0, 0, 0, 0.11);
+      border: none;
+      background: #ffffff;
+      border-radius: 3rem;
+      height: 3rem;
+      width: 100%;
+      outline: none;
+      font-family: "Montserrat", sans-serif;
+      padding: 0 3rem;
+      font-size: 1rem;
+    }
+
+    .nameInput {
+      margin-bottom: 1rem;
+      background: url(https://house-marketplace-ecru.vercel.app/static/media/badgeIcon.6a60b5bc1167fef5e6d0.svg) #ffffff 2.5% center
+        no-repeat;
+    }
+
+    .emailInput {
+      margin-bottom: 2rem;
+      background: url(https://house-marketplace-ecru.vercel.app/static/media/personIcon.60c17ce32265f6273287.svg)
+        #ffffff 2.5% center no-repeat;
+    }
+    .passwordInput,
+    .textarea {
+      background: #fff;
+      border: none;
+      border-radius: 3rem;
+      box-shadow: rgba(0, 0, 0, 0.11);
+      font-family: Montserrat, sans-serif;
+      font-size: 1rem;
+      height: 3rem;
+      outline: none;
+      padding: 0 3rem;
+      width: 100%;
+    }
+    .passwordInputDiv {
+      position: relative;
+    }
+    .passwordInput {
+      margin-bottom: 1rem;
+      background: url(https://house-marketplace-ecru.vercel.app/static/media/lockIcon.a38a1b56168bd1199de4.svg)
+        #ffffff 2.5% center no-repeat;
+    }
+    .showPassword {
+      cursor: pointer;
+      position: absolute;
+      top: -4%;
+      right: 1%;
+      padding: 1rem;
+    }
+    input {
+      writing-mode: horizontal-tb !important;
+
+      text-rendering: auto;
+      color: fieldtext;
+      letter-spacing: normal;
+      word-spacing: normal;
+      line-height: normal;
+      text-transform: none;
+      text-indent: 0px;
+      text-shadow: none;
+      display: inline-block;
+      text-align: start;
+      appearance: auto;
+      -webkit-rtl-ordering: logical;
+      cursor: text;
+      background-color: field;
+      margin: 0em;
+      padding: 1px 2px;
+      border-width: 2px;
+      border-style: inset;
+      border-color: -internal-light-dark(
+        rgb(118, 118, 118),
+        rgb(133, 133, 133)
+      );
+      border-image: initial;
+    }
+    .forgotPasswordLink {
+      cursor: pointer;
+      color: #0962e9;
+      font-weight: 600;
+      text-align: right;
+      text-decoration: none;
+      margin-left: 88px;
+    }
+    .bg {
+      background-color: rgb(232, 230, 253);
+      margin-top: 20px;
+      border-radius: 15px;
+    }
+
+    .socialLogin {
+      margin-left: 31%;
+      color: rgb(11, 11, 11);
+      font-weight: 600;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .socialIconDiv {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 10px;
+      margin-bottom: 9px;
+      width: 2rem;
+      height: 2rem;
+      background-color: #ffffff;
+      border-radius: 50%;
+      border-width: 0;
+      background: transparent;
+    }
+
+    .socialIconImg {
+      width: 100%;
+    }
+    .new {
+      text-align: left;
+      
+      margin-top: 5px;
+      font-weight: 600;
+    }
+    .new1 {
+      text-align: left;
+      margin-top: 5px;
+      font-weight: 500;
+    }
+    hr {
+      margin-top: 20px;
+      width: 80%;
+      margin-left: 30px;
+    }
+    .or {
+      background: rgb(232, 230, 253);
+      width: 30px;
+      margin: -29px auto 10px;
+      color: #021a2e;
+      font-weight: 600;
+      text-align: center;
+    }
+    .sup {
+      text-decoration: none;
+      color: #0962e9;
+    }
+    .uIcon {
+      margin-left: 38%;
+      width: 70px;
+      margin-top: -69px;
+    }
+    .sin {
+      text-align: center;
+      font-weight: 700;
+      color: #079bd1;
+    }
   </style>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { BsFillEyeFill } from "react-icons/bs";
 import Layout from "./../components/Layout/Layout";
 import OAuth from "../components/OAuth";
+ import userIcon from '../assets/png/pngfind.com-privacy-icon-png-4703547.png'
 
 const Signin = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -43,53 +44,49 @@ const Signin = () => {
   };
   return (
     <Layout>
-      <div className="d-flex  align-items-center justify-content-center w-100 mt-4">
-        <form className="bg-light p-4" onSubmit={loginHandler}>
-          <h4 className="bg-dark p-2 mt-2 text-light text-center">Sign In</h4>
-
-          <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">
-              Email address
-            </label>
-            <input
-              type="email"
-              value={email}
-              onChange={onChange}
-              className="form-control"
-              id="email"
-              aria-describedby="emailHelp"
-            />
+      <div className="d-flex  align-items-center justify-content-center w-100 mt-4" >
+        <form className="bg p-4" onSubmit={loginHandler}>
+          <img className="uIcon" src={userIcon} alt="user" />
+          <h4 className="sin" style={{marginBottom:"20px",borderRadius:"8px"}}>Sign In</h4>
+        <div className="emailInputDiv">
+          <input
+            type='email'
+            className='emailInput'
+            placeholder='Email'
+            id='email'
+            value={email}
+            onChange={onChange}
+          />
           </div>
-          <div className="mb-3">
-            <label htmlFor="exampleInputPassword1" className="form-label">
-              Password
-            </label>
+          <div className='passwordInputDiv'>
             <input
-              type={showPassword ? "text" : "password"}
+              type={showPassword ? 'text' : 'password'}
+              className='passwordInput'
+              placeholder='Password'
+              id='password'
               value={password}
               onChange={onChange}
-              className="form-control"
-              id="password"
             />
-            <span>
-              show password
-              <BsFillEyeFill
-                className="text-danger ms-2"
-                style={{ cursor: "pointer" }}
-                onClick={() => {
-                  setShowPassword((prevState) => !prevState);
-                }}
-              />
-            </span>{" "}
-            <Link to="/forgot-password">forgot Password</Link>
+
+            <img
+              src={"https://house-marketplace-ecru.vercel.app/static/media/visibilityIcon.d42e2dff8b09be94d6d209f0e86cf2d3.svg"}
+              alt='show password'
+              className='showPassword'
+              onClick={() => setShowPassword((prevState) => !prevState)}
+            />
           </div>
-          <button type="submit" className="btn btn-primary w-100">
+          <Link to='/forgot-password' className='forgotPasswordLink'>
+            Forgot Password
+          </Link>
+          <button type="submit" className="btn btn-primary w-100" style={{marginTop:"20px",marginBottom:'1rem'}}>
             Sign in
           </button>
+          <hr/>
+          <p className="or">OR</p>
           <OAuth />
-          <div className="mt-2">
-            <span>New User</span> <Link to="/signup">Sign up</Link>
-          </div>
+          
+            <span className="new1">New User</span> <Link to="/signup" className="sup new">Sign up</Link>
+          
         </form>
       </div>
     </Layout>
