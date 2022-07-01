@@ -104,72 +104,60 @@ const Profile = () => {
   };
   return (
     <Layout>
-      <div className="container mt-4 w-50 d-flex justify-content-between">
-        <h4>Profile Details</h4>
-        <button className="btn btn-danger" onClick={logoutHandler}>
+      <div className='profile'>
+      <header className="profileHeader">
+        <h4 className='pageHeader'>Profile Details</h4>
+        <button className="logOut" onClick={logoutHandler}>
           Logout
         </button>
-      </div>
-      <div className="container mt-4 card" style={{ width: "18rem" }}>
-        <div className="card-header">
-          <div className="d-flex justify-content-between">
-            <p>User Personal Details </p>
-            <span
-              style={{ cursor: "pointer" }}
-              onClick={() => {
-                changeDetails && onSubmit();
-                setChangeDetails((prevState) => !prevState);
-              }}
-            >
-              {changeDetails ? (
-                <MdDoneOutline color="green" />
-              ) : (
-                <FaEdit color="red" />
-              )}
-            </span>
-          </div>
+      </header>
+      <main>
+          <div className='profileDetailsHeader'>
+          <p className='profileDetailsText'>Personal Details</p>
+          <p
+            className='changePersonalDetails'
+            onClick={() => {
+              changeDetails && onSubmit()
+              setChangeDetails((prevState) => !prevState)
+            }}
+          >
+            {changeDetails ? 'Done' : 'Edit'}
+          </p>
         </div>
-        <div className="card-body">
+          
+        
+        <div className='profileCard'>
           <form>
-            <div className="mb-3">
-              <label htmlFor="exampleInputPassword1" className="form-label">
-                Name
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="name"
-                value={name}
-                onChange={onChange}
-                disabled={!changeDetails}
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="exampleInputEmail1" className="form-label">
-                Email address
-              </label>
-              <input
-                type="email"
-                value={email}
-                className="form-control"
-                id="email"
-                aria-describedby="emailHelp"
-                onChange={onChange}
-                disabled={!changeDetails}
-              />
-            </div>
+            <input
+              type='text'
+              id='name'
+              className={!changeDetails ? 'profileName' : 'profileNameActive'}
+              disabled={!changeDetails}
+              value={name}
+              onChange={onChange}
+            />
+            <input
+              type='text'
+              id='email'
+              className={!changeDetails ? 'profileEmail' : 'profileEmailActive'}
+              disabled={!changeDetails}
+              value={email}
+              onChange={onChange}
+            />
           </form>
-        </div>
+        
       </div>
-      <div className="container mt-4 w-50 d-flex justify-content-between">
-        <Link to="/create-listing">
-          <FaArrowAltCircleRight color="primary" /> Sell or Rent Your Home
+      <div className="sellORrent">
+      <Link to='/create-listing' className='createListing'>
+          <img src={"https://house-marketplace.vercel.app/static/media/homeIcon.09f28a71.svg"} alt='home' />
+          <p className="sellorrent">Sell or rent your home</p>
+          <img src={"https://house-marketplace.vercel.app/static/media/keyboardArrowRightIcon.8cee54be.svg"} alt='arrow right' />
         </Link>
       </div>
-      <div className="container">
+      <div className="listcontainer">
         {listings && listings?.length > 0 && (
           <>
-            <h5>Your Listings</h5>
+            <h5 className="yourprolistings">Your Listings</h5>
             <div>
               {listings.map((listing) => (
                 <ListingItem
@@ -182,9 +170,16 @@ const Profile = () => {
               ))}
             </div>
           </>
+          
         )}
+      
+      
       </div>
+      </main>
+      </div>
+      
     </Layout>
+    
   );
 };
 
