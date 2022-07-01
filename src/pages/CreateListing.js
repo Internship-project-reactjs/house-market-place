@@ -102,7 +102,7 @@ const CreateListing = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     // console.log(formData);
-    if (discountedPrice >= regularPrice) {
+    if (parseInt(discountedPrice) >= parseInt(regularPrice)) {
       setLoading(false);
       toast.error("Discount Price should be less than Regular Price");
       return;
