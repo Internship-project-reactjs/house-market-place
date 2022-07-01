@@ -34,14 +34,14 @@ const Header = () => {
               <li className="nav-item"
               
               >
-                <Link className="nav-link" to="/offers">
+                <Link className="nav-link active" to="/offers">
                   Offers
                 </Link>
               </li>
               <li className="nav-item"
               
               >
-                <Link className="nav-link" to="/profile">
+                <Link className="nav-link active" to="/profile">
                   Profile
                 </Link>
               </li>

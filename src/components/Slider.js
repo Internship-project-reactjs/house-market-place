@@ -95,6 +95,10 @@ const Slider = () => {
             </div>
             <div className="carousel-inner">
                 <div className="carousel-item active" data-bs-interval={3000}>
+                <h6 className="carousel-caption d-none d-md-block">
+                    <img alt="user pic" src={userPic} height={35} width={35} />
+                    <span className="ms-2"> {listings[0].data.name}</span>
+                  </h6>
                   <img
                     src={listings[0].data.imgUrls[0]}
                     className="d-block w-100"
@@ -103,7 +107,59 @@ const Slider = () => {
                     alt={listings[0].data.name}
                   />
                 </div>
-              {listings.map(({data, id }) => (
+                <div className="carousel-item" data-bs-interval={3000}>
+                <h6 className="carousel-caption d-none d-md-block">
+                    <img alt="user pic" src={userPic} height={35} width={35} />
+                    <span className="ms-2"> {listings[1].data.name}</span>
+                  </h6>
+                  <img
+                    src={listings[1].data.imgUrls[0]}
+                    className="d-block w-100"
+                    height={450}
+                    width='100vw'
+                    alt={listings[1].data.name}
+                  />
+                </div>
+                <div className="carousel-item" data-bs-interval={3000}>
+                <h6 className="carousel-caption d-none d-md-block">
+                    <img alt="user pic" src={userPic} height={35} width={35} />
+                    <span className="ms-2"> {listings[2].data.name}</span>
+                  </h6>
+                  <img
+                    src={listings[2].data.imgUrls[0]}
+                    className="d-block w-100"
+                    height={450}
+                    width='100vw'
+                    alt={listings[2].data.name}
+                  />
+                </div>
+                 <div className="carousel-item" data-bs-interval={3000}>
+                <h6 className="carousel-caption d-none d-md-block">
+                    <img alt="user pic" src={userPic} height={35} width={35} />
+                    <span className="ms-2"> {listings[3].data.name}</span>
+                  </h6>
+                  <img
+                    src={listings[3].data.imgUrls[0]}
+                    className="d-block w-100"
+                    height={450}
+                    width='100vw'
+                    alt={listings[3].data.name}
+                  />
+                </div>
+               <div className="carousel-item" data-bs-interval={3000}>
+                <h6 className="carousel-caption d-none d-md-block">
+                    <img alt="user pic" src={userPic} height={35} width={35} />
+                    <span className="ms-2"> {listings[4].data.name}</span>
+                  </h6>
+                  <img
+                    src={listings[4].data.imgUrls[0]}
+                    className="d-block w-100"
+                    height={450}
+                    width='100vw'
+                    alt={listings[0].data.name}
+                  />
+                </div>
+              {/* {listings.map(({data, id }) => (
                 <div
                   className="carousel-item"
                   data-bs-interval={3000}
@@ -113,7 +169,7 @@ const Slider = () => {
                   }}
                 >
                   <h6 className="carousel-caption d-none d-md-block">
-                    {/* <img alt="user pic" src={userPic} height={35} width={35} /> */}
+                    <img alt="user pic" src={userPic} height={35} width={35} />
                     <span className="ms-2"> {data.name}</span>
                   </h6>
                   <img
@@ -124,7 +180,7 @@ const Slider = () => {
                     alt={data.name}
                   />
                 </div>
-              ))}
+              ))} */}
               <button
                 className="carousel-control-prev"
                 type="button"
