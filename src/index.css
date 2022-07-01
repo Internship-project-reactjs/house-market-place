@@ -39,3 +39,38 @@
 }
 
 /* ======= */
+.navbar ul li{
+  list-style: none;
+  display: inline-block;
+  margin-top:  10px;
+  margin-bottom: 5px;
+  margin-right: 35px;
+  position: relative;
+  font-size: 1.2vw;
+}
+.navbar ul li a{
+  text-decoration: none;
+  color: antiquewhite;
+  text-transform: uppercase;
+}
+/* b{
+  font-size: 8vh;
+} */
+.navbar ul li::after{
+  content: '';
+  height: 3px;
+  width: 0;
+  background: #e9f7f5;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  transition: 0.5s;
+}
+.navbar ul li:hover::after{
+  width: 100%;
+}
+.homeIcon{
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}

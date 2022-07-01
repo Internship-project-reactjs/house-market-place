@@ -7,8 +7,9 @@ const Header = () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-dark">
         <div className="container">
+          <img className="homeIcon" src="https://www.pngkey.com/png/full/24-248385_home-icon-vector-png-google-home-app-icon.png" alt="home" />
           <Link className="navbar-brand" to="/">
-            House Marketplace
+            <b style={{fontSize:"30px"}}>H</b>ouse Marketplace
           </Link>
           <button
             className="navbar-toggler"
@@ -23,36 +24,27 @@ const Header = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-              <motion.li className="nav-item"
-              whileHover={{
-                scale: 1.1,
-                textShadow: "0px 0px 8px #565051",
-              }}
+              <li className="nav-item"
+              
               >
                 <Link className="nav-link active" aria-current="page" to="/">
                   Explore
                 </Link>
-              </motion.li>
-              <motion.li className="nav-item"
-              whileHover={{
-                scale: 1.1,
-                textShadow: "0px 0px 8px #565051",
-              }}
+              </li>
+              <li className="nav-item"
+              
               >
                 <Link className="nav-link" to="/offers">
                   Offers
                 </Link>
-              </motion.li>
-              <motion.li className="nav-item"
-              whileHover={{
-                scale: 1.1,
-                textShadow: "0px 0px 8px #565051",
-              }}
+              </li>
+              <li className="nav-item"
+              
               >
                 <Link className="nav-link" to="/profile">
                   Profile
                 </Link>
-              </motion.li>
+              </li>
             </ul>
           </div>
         </div>
