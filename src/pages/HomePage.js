@@ -146,7 +146,7 @@ const HomePage = () => {
                   style={{
                     width: "100%",
                     borderRadius: "20px",
-                    border: "4px solid #EBF4FA;",
+                    
                   }}
                 />
                 <motion.button
@@ -196,7 +196,7 @@ const HomePage = () => {
                   style={{
                     width: "100%",
                     borderRadius: "20px",
-                    border: "4px solid #EBF4FA;",
+                    
                   }}
                 />
                 <button
