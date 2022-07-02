@@ -6,6 +6,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import Spinner from "../components/Spinner";
 import { AiOutlineFileAdd } from "react-icons/ai";
 import { toast } from "react-toastify";
+
 import {
   getStorage,
   ref,
@@ -183,178 +184,184 @@ const CreateListing = () => {
     setLoading(false);
     navigate(`/category/${formDataCopy.type}/${docRef.id}`);
   };
+
+  const onMutate = (e) => {
+    let boolean = null
+
+    if (e.target.value === 'true') {
+      boolean = true
+    }
+    if (e.target.value === 'false') {
+      boolean = false
+    }
+
+    // Files
+    if (e.target.files) {
+      setFormData((prevState) => ({
+        ...prevState,
+        images: e.target.files,
+      }))
+    }
+
+    // Text/Booleans/Numbers
+    if (!e.target.files) {
+      setFormData((prevState) => ({
+        ...prevState,
+        [e.target.id]: boolean ?? e.target.value,
+      }))
+    }
+  }
+
+  if (loading) {
+    return <Spinner />
+  }
   return (
     <Layout>
-      <div className="container d-flex flex-column align-items-center justify-content-center mb-4">
-        <h3 className="mt-3 w-50 bg-dark text-light p-2 text-center">
-          Create Listing &nbsp;
-          <AiOutlineFileAdd />
-        </h3>
+      <div className=" d-flex align-items-center justify-content-center w-100 mt-4 ">
+        
         {/* sell rent button */}
-        <form className="w-50 bg-light p-4" onSubmit={onSubmit}>
-          <div className="d-flex flex-row mt-4">
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="radio"
-                value="rent"
-                onChange={onChangeHandler}
-                defaultChecked
-                name="type"
-                id="type"
-              />
-              <label className="form-check-label" htmlFor="rent">
-                Rent
-              </label>
-            </div>
-            <div className="form-check ms-3">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="type"
-                value="sale"
-                onChange={onChangeHandler}
-                id="type"
-              />
-              <label className="form-check-label" htmlFor="sale">
-                Sale
-              </label>
-            </div>
+        <form className=" bg1" onSubmit={onSubmit}>
+        
+        <h3 className="crlisting " style={{marginTop:"10px",fontWeight: "700",
+      color:" #079bd1", textAlign:"center",marginBottom:"20px"}}>
+          Create Listing
+        </h3>
+        <label className='formLabel'>Sell / Rent</label>
+          <div className='formButtons'>
+            <button
+              type='button'
+              className={type === 'sale' ? 'formButtonActive' : 'formButton'}
+              id='type'
+              value='sale'
+              onClick={onMutate}
+            >
+              Sell
+            </button>
+            <button
+              type='button'
+              className={type === 'rent' ? 'formButtonActive' : 'formButton'}
+              id='type'
+              value='rent'
+              onClick={onMutate}
+            >
+              Rent
+            </button>
           </div>
           {/* name */}
-          <div className="mb-3 mt-4">
-            <label htmlFor="name" className="form-label">
-              Name
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="name"
-              value={name}
-              onChange={onChangeHandler}
-              required
-            />
-          </div>
+          <label className='formLabel'>Name</label>
+          <input
+            className='formInputName'
+            type='text'
+            id='name'
+            value={name}
+            onChange={onMutate}
+            maxLength='32'
+            minLength='10'
+            required
+          />
           {/* bedrooms */}
-          <div className="mb-3 mt-4">
-            <label htmlFor="bedrooms" className="form-label">
-              Bedrooms
-            </label>
-            <input
-              type="number"
-              className="form-control"
-              id="bedrooms"
-              value={bedrooms}
-              onChange={onChangeHandler}
-              required
-            />
-          </div>
-          {/* bathrroms */}
-          <div className="mb-3 mt-4">
-            <label htmlFor="bathrooms" className="form-label">
-              Bathrooms
-            </label>
-            <input
-              type="number"
-              className="form-control"
-              id="bathrooms"
-              value={bathrooms}
-              onChange={onChangeHandler}
-              required
-            />
+          <div className='formRooms flex'>
+            <div>
+              <label className='formLabel'>Bedrooms</label>
+              <input
+                className='formInputSmall'
+                type='number'
+                id='bedrooms'
+                value={bedrooms}
+                onChange={onMutate}
+                min='1'
+                max='50'
+                required
+              />
+            </div>
+            <div>
+              <label className='formLabel'>Bathrooms</label>
+              <input
+                className='formInputSmall'
+                type='number'
+                id='bathrooms'
+                value={bathrooms}
+                onChange={onMutate}
+                min='1'
+                max='50'
+                required
+              />
+            </div>
           </div>
           {/* parking */}
-          <div className="mb-3 ">
-            <label htmlFor="parking" className="form-label">
-              Parking :
-            </label>
-            <div className="d-flex flex-row ">
-              <div className="form-check">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  value={true}
-                  onChange={onChangeHandler}
-                  name="parking"
-                  id="parking"
-                />
-                <label className="form-check-label" htmlFor="yes">
-                  Yes
-                </label>
-              </div>
-              <div className="form-check ms-3">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="parking"
-                  value={false}
-                  defaultChecked
-                  onChange={onChangeHandler}
-                  id="parking"
-                />
-                <label className="form-check-label" htmlFor="no">
-                  No
-                </label>
-              </div>
-            </div>
+          <label className='formLabel'>Parking spot</label>
+          <div className='formButtons'>
+            <button
+              className={parking ? 'formButtonActive' : 'formButton'}
+              type='button'
+              id='parking'
+              value={true}
+              onClick={onMutate}
+              min='1'
+              max='50'
+            >
+              Yes
+            </button>
+            <button
+              className={
+                !parking && parking !== null ? 'formButtonActive' : 'formButton'
+              }
+              type='button'
+              id='parking'
+              value={false}
+              onClick={onMutate}
+            >
+              No
+            </button>
           </div>
-          {/* furnished */}
-          <div className="mb-3 ">
-            <label htmlFor="furnished" className="form-label">
-              Furnished :
-            </label>
-            <div className="d-flex flex-row ">
-              <div className="form-check">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  value={true}
-                  onChange={onChangeHandler}
-                  name="furnished"
-                  id="furnished"
-                />
-                <label className="form-check-label" htmlFor="yes">
-                  Yes
-                </label>
-              </div>
-              <div className="form-check ms-3">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="furnished"
-                  value={false}
-                  defaultChecked
-                  onChange={onChangeHandler}
-                  id="furnished"
-                />
-                <label className="form-check-label" htmlFor="no">
-                  No
-                </label>
-              </div>
-            </div>
+
+          <label className='formLabel'>Furnished</label>
+          <div className='formButtons'>
+            <button
+              className={furnished ? 'formButtonActive' : 'formButton'}
+              type='button'
+              id='furnished'
+              value={true}
+              onClick={onMutate}
+            >
+              Yes
+            </button>
+            <button
+              className={
+                !furnished && furnished !== null
+                  ? 'formButtonActive'
+                  : 'formButton'
+              }
+              type='button'
+              id='furnished'
+              value={false}
+              onClick={onMutate}
+            >
+              No
+            </button>
           </div>
+
           {/* address */}
-          <div className="mb-3">
-            <label htmlFor="address">Address :</label>
-            <textarea
-              className="form-control"
-              placeholder="Enter Your Address"
-              id="address"
-              value={address}
-              onChange={onChangeHandler}
-              required
-            />
-          </div>
+          <label className='formLabel'>Address</label>
+          <textarea
+            className='formInputAddress'
+            type='text'
+            id='address'
+            value={address}
+            onChange={onMutate}
+            required
+          />
           {/* geoLoaction */}
           {!geoLoactionEnable && (
             <div className="mb-3 ">
-              <div className="d-flex flex-row ">
-                <div className="form-check">
-                  <label className="form-check-label" htmlFor="yes">
+              <div className="d-flex flex-column ">
+                
+                  <label className="formLabel">
                     Latitude
                   </label>
+                  <div className="formPriceDiv">
                   <input
-                    className="form-control"
+                    className="formInputSmall"
                     type="number"
                     value={latitude}
                     onChange={onChangeHandler}
@@ -362,12 +369,13 @@ const CreateListing = () => {
                     id="latitude"
                   />
                 </div>
-                <div className="form-check ms-3">
-                  <label className="form-check-label" htmlFor="no">
+                
+                  <label className="formLabel" >
                     Longitude
                   </label>
+                  <div className="formPriceDiv">
                   <input
-                    className="form-control"
+                    className="formInputSmall"
                     type="number"
                     name="longitude"
                     value={longitude}
@@ -379,103 +387,78 @@ const CreateListing = () => {
             </div>
           )}
           {/* offers  */}
-          <div className="mb-3 ">
-            <label htmlFor="offer" className="form-label">
-              Offer :
-            </label>
-            <div className="d-flex flex-row ">
-              <div className="form-check">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  value={true}
-                  onChange={onChangeHandler}
-                  name="offer"
-                  id="offer"
-                />
-                <label className="form-check-label" htmlFor="yes">
-                  Yes
-                </label>
-              </div>
-              <div className="form-check ms-3">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="offer"
-                  value={false}
-                  defaultChecked
-                  onChange={onChangeHandler}
-                  id="offer"
-                />
-                <label className="form-check-label" htmlFor="no">
-                  No
-                </label>
-              </div>
-            </div>
+          <label className='formLabel'>Offer</label>
+          <div className='formButtons'>
+            <button
+              className={offer ? 'formButtonActive' : 'formButton'}
+              type='button'
+              id='offer'
+              value={true}
+              onClick={onMutate}
+            >
+              Yes
+            </button>
+            <button
+              className={
+                !offer && offer !== null ? 'formButtonActive' : 'formButton'
+              }
+              type='button'
+              id='offer'
+              value={false}
+              onClick={onMutate}
+            >
+              No
+            </button>
           </div>
-          {/* regular price */}
-          <div className="mb-3 mt-4">
-            <label htmlFor="name" className="form-label">
-              Regular Price :
-            </label>
-            <div className=" d-flex flex-row ">
-              <input
-                type="number"
-                className="form-control w-50 "
-                id="regularPrice"
-                name="regularPrice"
-                value={regularPrice}
-                onChange={onChangeHandler}
-                required
-              />
-              {type === "rent" && <p className="ms-4 mt-2">$ / Month</p>}
-            </div>
-          </div>
-          {/* offer */}
-          {offer && (
-            <div className="mb-3 mt-4">
-              <label htmlFor="discountedPrice" className="form-label">
-                Discounted Price :
-              </label>
 
-              <input
-                type="number"
-                className="form-control w-50 "
-                id="discountedPrice"
-                name="discountedPrice"
-                value={discountedPrice}
-                onChange={onChangeHandler}
-                required
-              />
-            </div>
-          )}
-
-          {/* files images etc */}
-          <div className="mb-3">
-            <label htmlFor="formFile" className="form-label">
-              select images :
-            </label>
+          <label className='formLabel'>Regular Price</label>
+          <div className='formPriceDiv'>
             <input
-              className="form-control"
-              type="file"
-              id="images"
-              name="images"
-              onChange={onChangeHandler}
-              max="6"
-              accept=".jpg,.png,.jpeg"
-              multiple
+              className='formInputSmall'
+              type='number'
+              id='regularPrice'
+              value={regularPrice}
+              onChange={onMutate}
+              min='50'
+              max='750000000'
               required
             />
+            {type === 'rent' && <p className='formPriceText'>$ / Month</p>}
           </div>
-          {/* submit button */}
-          <div className="mb-3">
-            <input
-              disabled={!name || !address || !regularPrice || !images}
-              className="btn btn-primary w-100"
-              type="submit"
-              value="Create Listing"
-            />
-          </div>
+
+          {offer && (
+            <>
+              <label className='formLabel'>Discounted Price</label>
+              <input
+                className='formInputSmall'
+                type='number'
+                id='discountedPrice'
+                value={discountedPrice}
+                onChange={onMutate}
+                min='50'
+                max='750000000'
+                required={offer}
+              />
+            </>
+          )}
+          {/* files images etc */}
+          <label className='formLabel'>Images</label>
+          <p className='imagesInfo'>
+            The first image will be the cover (max 6).
+          </p>
+          <input
+            className='formInputFile'
+            type='file'
+            id='images'
+            onChange={onMutate}
+            max='6'
+            accept='.jpg,.png,.jpeg'
+            multiple
+            required
+          />
+          <button type='submit' className='primaryButton createListingButton'>
+            Create Listing
+          </button>
         </form>
       </div>
     </Layout>

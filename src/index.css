@@ -200,3 +200,147 @@
   font-size: 30px;
   
 }
+.bg1 {
+  background-color: rgb(232, 230, 253);
+  margin-top: 20px;
+  border-radius: 15px;
+  position: relative;
+  width: 500px;
+  padding: 30px;
+  display: inline;
+}
+.formLabel {
+  font-weight: 600;
+  margin-top: 1rem;
+  display: block;
+  
+}
+
+.formButtons {
+  display: flex;
+  height: 50px;
+  
+  width: 100px;
+}
+
+.formButton,
+.formInput,
+.formInputAddress,
+.formInputName,
+.formInputSmall,
+.formInputFile,
+.formButtonActive {
+  padding: 0.9rem 3rem;
+  background-color: #ffffff;
+  border: 2px solid #f9fcfb;
+  font-weight: 600;
+  border-radius: 1rem;
+  font-size: 1rem;
+  margin: 0.5rem 0.5rem 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formButtonActive {
+  background-color: #29b7f4;
+  color: #ffffff;
+  border: 2px solid #29b7f4;
+  width: 100px;
+  
+}
+
+.flex {
+  display: flex;
+}
+
+.formInput,
+.formInputAddress,
+.formInputName,
+.formInputSmall,
+.formInputFile {
+  border: none;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+}
+.formInputSmall,
+.formInputFile {
+  margin-right: 3rem;
+  padding: 0.9rem 0.7rem;
+  text-align: center;
+}
+
+.formInputName {
+  padding: 0.9rem 1rem;
+  width: 100%;
+  
+}
+
+.formInputAddress {
+  padding: 0.9rem 1rem;
+  width: 100%;
+  
+}
+
+.formPriceDiv {
+  display: flex;
+  align-items: center;
+}
+
+.formPriceText {
+  margin-left: -1.5rem;
+  font-weight: 600;
+}
+
+.imagesInfo {
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+.formInputFile {
+  width: 100%;
+}
+.formInputFile::-webkit-file-upload-button {
+  background-color: #29b7f4;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  border-radius: 1rem;
+  margin-right: 1rem;
+}
+.primaryButton {
+  cursor: pointer;
+  background: #29b7f4;
+  border-radius: 1rem;
+  border: 2px solid #29b7f4;
+  padding: 0.85rem 2rem;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.25rem;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.createListingButton {
+  margin-top: 3rem;
+}
+
+.offers {
+  margin-bottom: 10rem;
+}
+
+.offerBadge {
+  padding: 0.25rem 0.5rem;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 1rem;
+  margin-left: 1rem;
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+.listIcon{
+  height: 65px;
+  width: 65px;
+}
