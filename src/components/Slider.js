@@ -104,11 +104,11 @@ const Slider = () => {
                     width={35}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 1.5, duration: 1.5 }}
+                    transition={{ delay: 0.5, duration: 0.5 }}
                   />
                   <motion.span className="ms-2" initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 1.5, duration: 1.5 }}> {listings[0].data.name}</motion.span>
+                    transition={{ delay: 0.5, duration: 0.5 }}> {listings[0].data.name}</motion.span>
                 </h6>
                 <img
                   src={listings[0].data.imgUrls[0]}

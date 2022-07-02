@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Layout from "./../components/Layout/Layout";
+import { motion } from "framer-motion";
 
 import { db } from "./../firebase.config";
 import { toast } from "react-toastify";
@@ -88,13 +89,15 @@ const Offers = () => {
   };
   return (
     <Layout>
-      <div className="mt-3 container-fluid">
-        <h1>Best Offers</h1>
+      <motion.div className="mt-3 container-fluid" initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.5 }}>
+        <h1 className="sin" style={{marginBottom:"20px",marginTop:"3rem"}}>Best Offers</h1>
         {loading ? (
           <Spinner />
         ) : listing && listing.length > 0 ? (
           <>
-            <div>
+            <div >
               {listing.map((list) => (
                 <ListingItem listing={list.data} id={list.id} key={list.id} />
               ))}
@@ -103,8 +106,10 @@ const Offers = () => {
         ) : (
           <p>There Are No Current Offers </p>
         )}
-      </div>
-      <div className="d-flex align-items-center justify-content-center mb-4 mt-4">
+      </motion.div>
+      <motion.div className="d-flex align-items-center justify-content-center mb-4 mt-4" whileHover={{
+                  scale: 1.1,
+                }}>
         {lastFetchListing && (
           <button
             className="btn btn-primary text-center"
@@ -113,7 +118,7 @@ const Offers = () => {
             load more
           </button>
         )}
-      </div>
+      </motion.div>
     </Layout>
   );
 };

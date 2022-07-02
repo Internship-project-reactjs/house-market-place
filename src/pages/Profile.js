@@ -6,6 +6,7 @@ import { getAuth, updateProfile } from "firebase/auth";
 import { db } from "../firebase.config";
 import { FaEdit, FaArrowAltCircleRight } from "react-icons/fa";
 import { MdDoneOutline } from "react-icons/md";
+import { motion } from "framer-motion";
 import {
   doc,
   updateDoc,
@@ -106,23 +107,29 @@ const Profile = () => {
     <Layout>
       <div className='profile'>
       <header className="profileHeader">
-        <h4 className='pageHeader'>Profile Details</h4>
-        <button className="logOut" onClick={logoutHandler}>
+        <h4 className='pageHeader sin'>Profile Details</h4>
+        <motion.button className="logOut" onClick={logoutHandler}
+        whileHover={{
+          scale: 1.1,
+        }}>
           Logout
-        </button>
+        </motion.button>
       </header>
       <main>
           <div className='profileDetailsHeader'>
           <p className='profileDetailsText'>Personal Details</p>
-          <p
+          <motion.p
             className='changePersonalDetails'
             onClick={() => {
               changeDetails && onSubmit()
               setChangeDetails((prevState) => !prevState)
             }}
+            whileHover={{
+              scale: 1.2,
+            }}
           >
             {changeDetails ? 'Done' : 'Edit'}
-          </p>
+          </motion.p>
         </div>
           
         
@@ -157,8 +164,12 @@ const Profile = () => {
       <div className="listcontainer">
         {listings && listings?.length > 0 && (
           <>
-            <h5 className="yourprolistings">Your Listings</h5>
-            <div>
+            <motion.h5 className="yourprolistings sin" initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.5 }}>Your Listings</motion.h5>
+            <motion.div initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.5 }}>
               {listings.map((listing) => (
                 <ListingItem
                   key={listing.id}
@@ -168,7 +179,7 @@ const Profile = () => {
                   onEdit={() => onEdit(listing.id)}
                 />
               ))}
-            </div>
+            </motion.div>
           </>
           
         )}

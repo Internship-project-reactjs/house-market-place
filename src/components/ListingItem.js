@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaBed, FaBath } from "react-icons/fa";
+import { motion } from "framer-motion";
 const ListingItem = ({ listing, id, onDelete, onEdit }) => {
   return (
     <>
@@ -44,20 +45,26 @@ const ListingItem = ({ listing, id, onDelete, onEdit }) => {
           </Link>
           <div>
             {onDelete && (
-              <button
+              <motion.button
                 className="btn btn-danger mx-2"
                 onClick={() => onDelete(listing.id,listing.name)}
+                whileHover={{
+                  scale: 1.1,
+                }}
               >
                 Delete Listing
-              </button>
+              </motion.button>
             )}
             {onEdit && (
-              <button
+              <motion.button
                 className="btn btn-info ms-3"
                 onClick={() => onEdit(listing.id)}
+                whileHover={{
+                  scale: 1.1,
+                }}
               >
                 Edit Listing
-              </button>
+              </motion.button>
             )}
           </div>
         </div>
