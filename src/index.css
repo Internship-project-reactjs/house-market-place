@@ -2,12 +2,14 @@
 .Imagecontainer {
     position: relative;
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
+    display: flex;
   }
   
   .Imagecontainer img {
     width: 100%;
-    height: auto;
+    
+    height: 250px;
   }
   
   .Imagecontainer .btn {
@@ -29,7 +31,13 @@
   .Imagecontainer .btn:hover {
     background-color: black;
   }
-  
+  @media (max-width:900px) {
+    .allimage{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
 /* // image container for category */
 
 .category-link a{
@@ -343,4 +351,8 @@
 .listIcon{
   height: 65px;
   width: 65px;
+}
+.lineIcon{
+  height: 70px;
+  width: 150px;
 }

@@ -28,14 +28,14 @@ const HomePage = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 1.5 }}
-          >
-            <h1 style={{fontFamily:"'Francois One', sans-serif"}}>Category</h1>
+          > 
+            <p className="sin1" style={{fontFamily:"'Francois One', sans-serif"}}> Category </p>
           </motion.h1>
-          <div
-            className="d-flex align-items-center justify-content-center"
+          {/* <div
+            className="d-flex align-items-center justify-content-center allimage"
             style={{ width: "100vw" }}
-          >
-            <motion.div
+          > */}
+            {/* <motion.div
               className="d-flex align-items-center justify-content-center"
               style={{ width: "50vw" }}
               initial={{ opacity: 0 }}
@@ -49,7 +49,7 @@ const HomePage = () => {
                 whileHover={{
                   scale: 1.1,
                 }}
-              >
+              > */}
                 {/* <img
                   src={img1}
                   alt="Rent"
@@ -65,14 +65,14 @@ const HomePage = () => {
                 >
                   TO RENT
                 </motion.button> */}
-                <RentPic />
-                <h5 style={{ fontFamily: "M PLUS 1p', sans-serif", textAlign:"center",marginTop:"10px",marginLeft:"20px" }}>
+                {/* <RentPic /> */}
+                {/* <h5 style={{ fontFamily: "M PLUS 1p', sans-serif", textAlign:"center",marginTop:"10px",marginLeft:"20px" }}>
                   Click Here For Rent
-                </h5>
-              </motion.div>
-            </motion.div>
+                </h5> */}
+              {/* </motion.div>
+            </motion.div> */}
 
-            <motion.div
+            {/* <motion.div
               className="d-flex align-items-center justify-content-center"
               style={{ width: "50vw" }}
               initial={{ opacity: 0 }}
@@ -86,7 +86,7 @@ const HomePage = () => {
                 whileHover={{
                   scale: 1.1,
                 }}
-              >
+              > */}
                 {/* <img
                   src={img2}
                   alt="Rent"
@@ -102,7 +102,7 @@ const HomePage = () => {
                 >
                   TO SALE
                 </button> */}
-                <motion.div className="text1" style={{backgroundColor:"#2C3539	" ,width:"400px",padding:"30px", borderRadius:"15px",marginLeft:"50px"}}
+                {/* {/* <motion.div className="text1" style={{backgroundColor:"#2C3539	" ,width:"400px",padding:"30px", borderRadius:"15px",marginLeft:"50px"}}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 , x:-50}}
                 transition={{ delay: 1.5, duration: 1.5 }}
@@ -117,22 +117,22 @@ const HomePage = () => {
                 <h2 style={{ fontFamily: "M PLUS 1p', sans-serif",color:"white" }}>
                   Rent Your Dream House Here{" "}
                 </h2>
-                </motion.div>
-              </div>
-            </motion.div>
-          </div>
+                </motion.div> */}
+              {/* </div>
+            </motion.div> */}
+          {/* </div>  */}
           <div
-            className="d-flex align-items-center justify-content-center"
+            className="d-flex align-items-center justify-content-center allimage"
             style={{ width: "100vw" }}
           >
             <motion.div
               className="d-flex align-items-center justify-content-center"
               style={{ width: "50vw" }}
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              animate={{ opacity: 1}}
               transition={{ delay: 1.5, duration: 1.5 }}
             >
-              <div
+              <motion.div
                 className="Imagecontainer"
                 onClick={() => navigate("/category/sale")}
                 style={{ width: "500px", cursor: "pointer" }}
@@ -140,7 +140,7 @@ const HomePage = () => {
                   scale: 1.1,
                 }}
               >
-                {/* <img
+                <img
                   src={img1}
                   alt="Rent"
                   style={{
@@ -154,8 +154,8 @@ const HomePage = () => {
                   onClick={() => navigate("/category/rent")}
                 >
                   TO RENT
-                </motion.button> */}
-                <motion.div className="text2" style={{backgroundColor:"#2C3539	" ,width:"400px",padding:"30px", borderRadius:"15px",marginRight:"50px"}}
+                </motion.button>
+                {/* <motion.div className="text2" style={{backgroundColor:"#2C3539	" ,width:"400px",padding:"30px", borderRadius:"15px",marginRight:"50px"}}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 , x:50}}
                 transition={{ delay: 1.5, duration: 1.5 }}
@@ -171,15 +171,15 @@ const HomePage = () => {
                 <h2 style={{ fontFamily: "M PLUS 1p', sans-serif",color:"white" }}>
                   Sale Your Dream House Here{" "}
                 </h2>
-                </motion.div>
-              </div>
+                </motion.div> */}
+              </motion.div>
             </motion.div>
 
             <motion.div
               className="d-flex align-items-center justify-content-center"
               style={{ width: "50vw" }}
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              animate={{ opacity: 1}}
               transition={{ delay: 1.5, duration: 1.5 }}
             >
               <motion.div
@@ -190,7 +190,7 @@ const HomePage = () => {
                   scale: 1.1,
                 }}
               >
-                {/* <img
+                <img
                   src={img2}
                   alt="Rent"
                   style={{
@@ -204,12 +204,12 @@ const HomePage = () => {
                   onClick={() => navigate("/category/sale")}
                 >
                   TO SALE
-                </button> */}
+                </button>
 
-                <SellPic/>
+                {/* <SellPic/>
                 <h5 style={{ fontFamily: "M PLUS 1p', sans-serif", textAlign:"center",marginTop:"10px", marginLeft:"20px" }}>
                   Click Here For Sale
-                </h5>
+                </h5> */}
               </motion.div>
             </motion.div>
           </div>
