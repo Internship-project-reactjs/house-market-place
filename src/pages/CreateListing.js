@@ -224,7 +224,7 @@ const CreateListing = () => {
         
         <h3 className="crlisting " style={{marginTop:"10px",fontWeight: "700",
       color:" #079bd1", textAlign:"center",marginBottom:"20px"}}>
-          Create Listing
+          Create Listing...
         </h3>
         <label className='formLabel'>Sell / Rent</label>
           <div className='formButtons'>
