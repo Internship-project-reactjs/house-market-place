@@ -224,7 +224,7 @@ const CreateListing = () => {
           {/* name */}
           <div className="mb-3 mt-4">
             <label htmlFor="name" className="form-label">
-              Name
+               Your Name
             </label>
             <input
               type="text"
