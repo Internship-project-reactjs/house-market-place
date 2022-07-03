@@ -18,7 +18,7 @@ import {
   deleteDoc,
 } from "firebase/firestore";
 import ListingItem from "../components/ListingItem";
-import Profilepic from "../Pics/Profilepic";
+// import Profilepic from "../Pics/Profilepic";
 
 const Profile = () => {
   const auth = getAuth();
@@ -166,7 +166,7 @@ const Profile = () => {
         </Link>
       </div>
       </div>
-      <Profilepic style={{marginLeft:"40px",alignItems:"center", justifyContent:"center",width:"70%"}}/>
+      {/* <Profilepic style={{marginLeft:"40px",alignItems:"center", justifyContent:"center",width:"70%"}}/> */}
       </div>
       <div className="listcontainer">
         {listings && listings?.length > 0 && (
