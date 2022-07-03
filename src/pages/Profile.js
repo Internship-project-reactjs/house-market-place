@@ -18,6 +18,7 @@ import {
   deleteDoc,
 } from "firebase/firestore";
 import ListingItem from "../components/ListingItem";
+import Profilepic from "../Pics/Profilepic";
 
 const Profile = () => {
   const auth = getAuth();
@@ -106,6 +107,7 @@ const Profile = () => {
   return (
     <Layout>
       <div className='profile'>
+
       <header className="profileHeader">
         <h4 className='pageHeader sin'>Profile Details</h4>
         <motion.button className="logOut" onClick={logoutHandler}
@@ -116,6 +118,8 @@ const Profile = () => {
         </motion.button>
       </header>
       <main>
+        <div  style={{display:"flex",width:"100vw"}}>
+      <div>
           <div className='profileDetailsHeader'>
           <p className='profileDetailsText'>Personal Details</p>
           <motion.p
@@ -160,6 +164,9 @@ const Profile = () => {
           <p className="sellorrent">Sell or rent your home</p>
           <img src={"https://house-marketplace.vercel.app/static/media/keyboardArrowRightIcon.8cee54be.svg"} alt='arrow right' />
         </Link>
+      </div>
+      </div>
+      <Profilepic style={{marginLeft:"40px",alignItems:"center", justifyContent:"center",width:"70%"}}/>
       </div>
       <div className="listcontainer">
         {listings && listings?.length > 0 && (
