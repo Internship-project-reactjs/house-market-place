@@ -25,7 +25,7 @@ const Contact = () => {
   }, [params.landlordId]);
   return (
     <Layout>
-      <h3>Contact Details</h3>
+      <h3 className='pageHeader sin'>Profile Details</h3>
       <div className="container mt-4 d-flex">
         <div className="w-50">
           {landlord !== "" && (
