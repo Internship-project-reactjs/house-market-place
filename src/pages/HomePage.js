@@ -29,7 +29,7 @@ const HomePage = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 1.5 }}
           > 
-            <p className="sin1" style={{fontFamily:"'Francois One', sans-serif"}}> Category </p>
+            <p className="sin1" style={{fontFamily:"Book Antiqua, Palatino, Palatino Linotype, Palatino LT STD, Georgia, serif"}}> Category </p>
           </motion.h1>
           {/* <div
             className="d-flex align-items-center justify-content-center allimage"
@@ -134,7 +134,7 @@ const HomePage = () => {
             >
               <motion.div
                 className="Imagecontainer"
-                onClick={() => navigate("/category/sale")}
+                
                 style={{ width: "500px", cursor: "pointer" }}
                 whileHover={{
                   scale: 1.1,
@@ -153,7 +153,7 @@ const HomePage = () => {
                   className="btn"
                   onClick={() => navigate("/category/rent")}
                 >
-                  TO RENT
+                  FOR RENT
                 </motion.button>
                 {/* <motion.div className="text2" style={{backgroundColor:"#2C3539	" ,width:"400px",padding:"30px", borderRadius:"15px",marginRight:"50px"}}
                 initial={{ opacity: 0 }}
@@ -184,7 +184,7 @@ const HomePage = () => {
             >
               <motion.div
                 className="Imagecontainer"
-                onClick={() => navigate("/category/sale")}
+                
                 style={{ width: "50vw", cursor: "pointer" }}
                 whileHover={{
                   scale: 1.1,
@@ -203,7 +203,7 @@ const HomePage = () => {
                   className="btn"
                   onClick={() => navigate("/category/sale")}
                 >
-                  TO SALE
+                  FOR SALE
                 </button>
 
                 {/* <SellPic/>

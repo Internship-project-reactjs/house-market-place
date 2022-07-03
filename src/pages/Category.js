@@ -91,7 +91,7 @@ const Category = () => {
   return (
     <Layout>
       <div className="mt-3 container-fluid">
-        <h1>
+        <h1 className="sin" style={{fontFamily:"Book Antiqua, Palatino, Palatino Linotype, Palatino LT STD, Georgia, serif",marginTop:"3rem"}}>
           {params.categoryName === "rent"
             ? "Places For Rent"
             : "Plces For Sale"}

@@ -223,7 +223,7 @@ const CreateListing = () => {
         <form className=" bg1" onSubmit={onSubmit}>
         
         <h3 className="crlisting " style={{marginTop:"10px",fontWeight: "700",
-      color:" #079bd1", textAlign:"center",marginBottom:"20px"}}>
+      color:" #066284", textAlign:"center",marginBottom:"20px",}}>
           Create Listing
         </h3>
         <label className='formLabel'>Sell / Rent</label>

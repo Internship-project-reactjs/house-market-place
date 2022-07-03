@@ -166,7 +166,7 @@ const Profile = () => {
           <>
             <motion.h5 className="yourprolistings sin" initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.5 }}>Your Listings</motion.h5>
+              transition={{ delay: 0.5, duration: 0.5 }} style={{fontFamily:"Book Antiqua, Palatino, Palatino Linotype, Palatino LT STD, Georgia, serif"}}>Your Listings</motion.h5>
             <motion.div initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.5 }}>
