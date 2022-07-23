@@ -118,7 +118,7 @@ const Profile = () => {
         </motion.button>
       </header>
       <main>
-        <div  style={{display:"flex",width:"100vw"}}>
+        <div  style={{display:"flex"}}>
       <div>
           <div className='profileDetailsHeader'>
           <p className='profileDetailsText'>Personal Details</p>
