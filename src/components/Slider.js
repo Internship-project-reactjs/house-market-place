@@ -95,9 +95,12 @@ const Slider = () => {
               />
             </div>
             <div className="carousel-inner">
-              <div className="carousel-item active" data-bs-interval={3000}>
+              <div className="carousel-item active" onClick={() => {
+                    navigat(`/category/${listings[0].data.type}/${listings[0].id}`);
+                  }} data-bs-interval={3000}>
                 <h6 className="carousel-caption d-none d-md-block">
                   <motion.img
+                  
                     alt="user pic"
                     src={userPic}
                     height={35}
@@ -118,7 +121,9 @@ const Slider = () => {
                   alt={listings[0].data.name}
                 />
               </div>
-              <div className="carousel-item" data-bs-interval={3000}>
+              <div className="carousel-item" onClick={() => {
+                    navigat(`/category/${listings[1].data.type}/${listings[1].id}`);
+                  }} data-bs-interval={3000}>
                 <h6 className="carousel-caption d-none d-md-block">
                   <img alt="user pic" src={userPic} height={35} width={35} />
                   <span className="ms-2"> {listings[1].data.name}</span>
@@ -131,7 +136,9 @@ const Slider = () => {
                   alt={listings[1].data.name}
                 />
               </div>
-              <div className="carousel-item" data-bs-interval={3000}>
+              <div className="carousel-item" onClick={() => {
+                    navigat(`/category/${listings[2].data.type}/${listings[2].id}`);
+                  }} data-bs-interval={3000}>
                 <h6 className="carousel-caption d-none d-md-block">
                   <img alt="user pic" src={userPic} height={35} width={35} />
                   <span className="ms-2"> {listings[2].data.name}</span>
@@ -144,7 +151,9 @@ const Slider = () => {
                   alt={listings[2].data.name}
                 />
               </div>
-              <div className="carousel-item" data-bs-interval={3000}>
+              <div className="carousel-item" onClick={() => {
+                    navigat(`/category/${listings[3].data.type}/${listings[3].id}`);
+                  }} data-bs-interval={3000}>
                 <h6 className="carousel-caption d-none d-md-block">
                   <img alt="user pic" src={userPic} height={35} width={35} />
                   <span className="ms-2"> {listings[3].data.name}</span>
@@ -157,7 +166,9 @@ const Slider = () => {
                   alt={listings[3].data.name}
                 />
               </div>
-              <div className="carousel-item" data-bs-interval={3000}>
+              <div className="carousel-item" onClick={() => {
+                    navigat(`/category/${listings[4].data.type}/${listings[4].id}`);
+                  }} data-bs-interval={3000}>
                 <h6 className="carousel-caption d-none d-md-block">
                   <img alt="user pic" src={userPic} height={35} width={35} />
                   <span className="ms-2"> {listings[4].data.name}</span>
