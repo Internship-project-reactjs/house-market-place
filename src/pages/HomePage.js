@@ -41,7 +41,9 @@ const HomePage = () => {
           </motion.h1>
           <div className="exploreCategories">
             <Link to="/category/rent">
-              <img src={img1} alt="rent" className="exploreCategoryImg" />
+              <motion.img src={img1} alt="rent" className="exploreCategoryImg"whileHover={{
+                  scale: 1.1,
+                }} />
               <motion.button
                 className="btn"
                 onClick={() => navigate("/category/rent")}
@@ -54,7 +56,10 @@ const HomePage = () => {
               <motion.img
                 src={img2}
                 alt="sell"
-                className="exploreCategoryImg"
+                className="exploreCategoryImg img2"
+                whileHover={{
+                  scale: 1.1,
+                }}
               />
               <motion.button
                 className="btn"
