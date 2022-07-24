@@ -4,9 +4,10 @@ const MsgPic = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      className='msgpic'
       data-name="Layer 1"
-      width="674.81823"
-      height="530.59868"
+      width="574.81823"
+      height="330.59868"
       viewBox="0 0 674.81823 590.59868"
       xmlnsXlink="http://www.w3.org/1999/xlink"
     >
