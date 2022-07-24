@@ -48,7 +48,7 @@ const HomePage = () => {
           </Link>
           
           
-          <Link to='/category/rent'>
+          <Link to='/category/sale'>
             
             <motion.img
               src={img2}
@@ -59,7 +59,7 @@ const HomePage = () => {
             />
             <motion.button
                   className="btn"
-                  onClick={() => navigate("/category/rent")}
+                  onClick={() => navigate("/category/sale")}
                 >
                  <strong> FOR SALE</strong>
                 </motion.button>
