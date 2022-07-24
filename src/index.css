@@ -376,7 +376,7 @@
 
 .exploreCategoryImg {
   min-height: 115px;
-  height: 15vw;
+  height: 25vh;
   width: 95%;
   border-radius: 1.5rem;
   object-fit: cover;
