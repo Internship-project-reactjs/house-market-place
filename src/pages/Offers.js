@@ -89,7 +89,7 @@ const Offers = () => {
   };
   return (
     <Layout>
-      <motion.div className="mt-3 container-fluid" initial={{ opacity: 0 }}
+      <motion.div className="mt-3 container" initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.5 }}>
         <h1 className="sin" style={{marginBottom:"20px",marginTop:"3rem",fontFamily:"Book Antiqua, Palatino, Palatino Linotype, Palatino LT STD, Georgia, serif"}}>Best Offers</h1>

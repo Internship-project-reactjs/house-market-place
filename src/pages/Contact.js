@@ -34,7 +34,7 @@ const Contact = () => {
 
               <div className="form-floating">
                 <textarea
-                  style={{height:"100px",width:"550px"}}
+                  style={{height:"100px",width:"90vw"}}
                   className="form-control mt-3"
                   placeholder="Leave a comment here"
                   value={message}

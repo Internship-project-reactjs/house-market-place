@@ -1,7 +1,7 @@
 /* // image container for category */
 .exploreCategory {
-  position: relative;
-  width: 100%;
+  position: absolute;
+  width: 100vw;
   max-width: 500px;
   display: flex;
 }
@@ -35,7 +35,7 @@
   .allimage {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 100vw;
   }
 }
 /* // image container for category */
@@ -54,7 +54,7 @@
   margin-bottom: 5px;
   margin-right: 35px;
   position: relative;
-  font-size: 1.2vw;
+  font-size: 1.2;
 }
 .navbar ul li a {
   text-decoration: none;
@@ -366,9 +366,9 @@
 }
 .exploreCategories {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   margin-left: 20px;
-  margin-right: 20px;;
+  /* margin-right: 20px; */
 }
 .exploreCategories a {
   width: 48%;
@@ -376,11 +376,11 @@
 
 .exploreCategoryImg {
   min-height: 115px;
-  height: 25vh;
+  height: 35vh;
   width: 95%;
   border-radius: 1.5rem;
   object-fit: cover;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 .exploreCategoryName {
@@ -396,7 +396,6 @@ and (orientation: portrait) {
   .exploreCategories {
     display: block;
     /* justify-content: space-between; */
-    margin-right: 20px; 
   }
   .exploreCategories a {
     width: 48%;
@@ -405,7 +404,7 @@ and (orientation: portrait) {
   .exploreCategoryImg {
     min-height: 115px;
     height: 25vh;
-    width: 90%;
+    width: 95%;
     border-radius: 1.5rem;
     object-fit: cover;
     margin: 0 auto;
