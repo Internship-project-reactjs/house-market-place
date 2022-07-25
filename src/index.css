@@ -31,37 +31,13 @@
 .exploreCategory .btn:hover {
   background-color: black;
 }
-<<<<<<< HEAD
-
-=======
-.tarea{
-  height:150px;
-  width:49vw;
-}
->>>>>>> 861f5aa2dcfd61e8179eee387d627b4e6ec61755
 @media (max-width: 900px) {
   .allimage {
     display: flex;
     flex-direction: column;
     width: 100vw;
   }
-<<<<<<< HEAD
  
-=======
- .d-flex{
-    display: flex;
-    flex-direction: column;
-    
-  }
-  .msgpic{
-    -ms-flex-align: center;
-    width: 250px;
-  }
-  .tarea{
-    width: 39vh;
-
-  }
->>>>>>> 861f5aa2dcfd61e8179eee387d627b4e6ec61755
 
 }
 
