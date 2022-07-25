@@ -31,12 +31,15 @@
 .exploreCategory .btn:hover {
   background-color: black;
 }
+
 @media (max-width: 900px) {
   .allimage {
     display: flex;
     flex-direction: column;
     width: 100vw;
   }
+ 
+
 }
 
 /* // image container for category */
