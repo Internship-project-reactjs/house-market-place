@@ -25,7 +25,7 @@ const Contact = () => {
   }, [params.landlordId]);
   return (
     <Layout>
-      <h3 className='pageHeader sin'>Profile Details</h3>
+      <h1 className='pageHeader sin ' style={{marginBottom:"20px",marginTop:"3rem",fontFamily:"Book Antiqua, Palatino, Palatino Linotype, Palatino LT STD, Georgia, serif",fontWeight:"600"}}>Contact Us</h1>
       <div className="container mt-4 d-flex">
         <div className="w-50">
           {landlord !== "" && (
@@ -34,8 +34,8 @@ const Contact = () => {
 
               <div className="form-floating">
                 <textarea
-                  style={{height:"100px",width:"90vw"}}
-                  className="form-control mt-3"
+                  style={{height:"150px",width:"49vw"}}
+                  className="form-control  tarea"
                   placeholder="Leave a comment here"
                   value={message}
                   id="message"
