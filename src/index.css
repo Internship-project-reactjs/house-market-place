@@ -31,12 +31,30 @@
 .exploreCategory .btn:hover {
   background-color: black;
 }
+.tarea{
+  height:150px;
+  width:49vw;
+}
 @media (max-width: 900px) {
   .allimage {
     display: flex;
     flex-direction: column;
     width: 100vw;
   }
+ .d-flex{
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .msgpic{
+    -ms-flex-align: center;
+    width: 250px;
+  }
+  .tarea{
+    width: 39vh;
+
+  }
+
 }
 
 /* // image container for category */
